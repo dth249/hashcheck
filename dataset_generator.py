@@ -26,6 +26,13 @@ GROUP_COUNTS = {
     "large":  30_000,   # ~1,500 bytes/order
 }
 
+# # 20k orders test signing, phân 3 nhóm kích thước đơn hàng (nằm trong cùng 1 file)
+# GROUP_COUNTS = {
+#     "small":  4_000,   # ~200 bytes/order
+#     "medium": 8_000,   # ~600 bytes/order
+#     "large":  8_000,   # ~1,500 bytes/order
+# }
+
 PRODUCTS = [
     "Wireless Mouse", "Mechanical Keyboard", "USB-C Cable", "Laptop Stand",
     "Bluetooth Speaker", "Monitor 24in", "Webcam HD", "External SSD 1TB",

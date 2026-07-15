@@ -1,0 +1,11 @@
+Table 4. Verification-latency distribution statistics (10,000 orders per group)
+----------------------------------------------------------------------
+Group             Mean (ms)     Variance (ms^2)   Std. dev (ms) 
+Valid orders      0.0626        0.000674          0.0260        
+Tampered orders   0.0649        0.000712          0.0267        
+
+Chi tiết đầy đủ (min/median/max):
+  Valid      n=10,000  min=0.0531ms  median=0.0581ms  max=1.2795ms
+  Tampered   n=10,000  min=0.0535ms  median=0.0598ms  max=0.8867ms
+
+Ghi chú phương pháp: latency đo trên hash_data()+verify_signature() vô điều kiện (không short-circuit ở bước so khớp hash), khớp cách đo 'Verification' trong Table 1 -> hai bảng phải cùng bậc độ lớn.
