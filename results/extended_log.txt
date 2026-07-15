@@ -1,0 +1,71 @@
+========================================================================
+IntelliHash Extended Benchmark — 2 Methods × 3 Size Groups
+========================================================================
+Timestamp : 2026-07-14 16:42:02
+
+Machine Info
+------------------------------------------------------------------------
+  os                : Windows 10
+  cpu               : Intel(R) Core(TM) i5-7300U CPU @ 2.60GHz
+  logical_cores     : 4
+  ram               : 7.9 GB
+  python            : 3.14.6
+  cryptography      : 49.0.0
+  jcs               : 0.2.1
+
+Dataset breakdown
+------------------------------------------------------------------------
+  small   : 30,000 orders
+  medium  : 40,000 orders
+  large   : 30,000 orders
+
+Size group: small  (30,000 orders)
+------------------------------------------------------------
+  method: direct
+    avg_payload = 155 bytes
+    canon  avg=0.0170ms  std=0.1900ms
+    sign   avg=0.7168ms  std=0.3715ms
+    verify avg=0.0626ms  std=0.0799ms
+    throughput (sign): 1395 orders/sec
+
+  method: jcs
+    avg_payload = 155 bytes
+    canon  avg=0.0435ms  std=0.8541ms
+    sign   avg=0.6968ms  std=0.2944ms
+    verify avg=0.0608ms  std=0.0914ms
+    throughput (sign): 1435 orders/sec
+
+
+Size group: medium  (40,000 orders)
+------------------------------------------------------------
+  method: direct
+    avg_payload = 260 bytes
+    canon  avg=0.0199ms  std=0.0351ms
+    sign   avg=0.7305ms  std=0.7127ms
+    verify avg=0.0660ms  std=0.2401ms
+    throughput (sign): 1369 orders/sec
+
+  method: jcs
+    avg_payload = 260 bytes
+    canon  avg=0.0588ms  std=0.2327ms
+    sign   avg=0.7430ms  std=0.5488ms
+    verify avg=0.0680ms  std=0.2511ms
+    throughput (sign): 1346 orders/sec
+
+
+Size group: large  (30,000 orders)
+------------------------------------------------------------
+  method: direct
+    avg_payload = 879 bytes
+    canon  avg=0.0379ms  std=0.0548ms
+    sign   avg=0.7253ms  std=1.0788ms
+    verify avg=0.0664ms  std=0.1988ms
+    throughput (sign): 1379 orders/sec
+
+  method: jcs
+    avg_payload = 879 bytes
+    canon  avg=0.1535ms  std=0.3011ms
+    sign   avg=0.7326ms  std=0.6635ms
+    verify avg=0.0688ms  std=0.2676ms
+    throughput (sign): 1365 orders/sec
+
