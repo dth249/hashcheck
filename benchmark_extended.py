@@ -56,7 +56,7 @@ def run_direct(order: dict, private_key, public_key) -> dict:
     """
     Direct JSON signing:
       Bước canon: json.dumps thô — không sort key, không chuẩn hóa.
-      Bước sign:  sign_data() — SHA-256 (internal) + RSA-PSS.
+      Bước sign:  sign_data() — SHA-256 (internal) + RSA PKCS#1 v1.5.
     Không deterministic giữa các hệ thống khác nhau.
     """
     t0 = time.perf_counter()
@@ -85,7 +85,7 @@ def run_jcs(order: dict, private_key, public_key) -> dict:
       Bước canon: NFC normalization → jcs.canonicalize() RFC 8785.
         - NFC: đưa tất cả chuỗi về dạng NFC trước (phần mở rộng so với JCS gốc).
         - JCS: sort key, ECMAScript number format (RFC 8785).
-      Bước sign: sign_data() — SHA-256 (internal) + RSA-PSS.
+      Bước sign: sign_data() — SHA-256 (internal) + RSA PKCS#1 v1.5.
     Deterministic và nhất quán với dữ liệu NFC/NFD hỗn hợp.
     """
     t0 = time.perf_counter()

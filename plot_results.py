@@ -71,7 +71,7 @@ def main():
 
     canon, sign, verify = load_csv()
 
-    plot_histogram(sign, "Signing Latency Distribution (RSA-2048 + PSS)", "Latency (ms)", "signing_latency.png")
+    plot_histogram(sign, "Signing Latency Distribution (RSA-2048 + PKCS#1 v1.5)", "Latency (ms)", "signing_latency.png")
     plot_histogram(verify, "Verification Latency Distribution", "Latency (ms)", "verification_latency.png")
     plot_throughput_bar(canon, sign, verify)
 

@@ -231,7 +231,7 @@ def main():
     for k, v in canon_stats.items():
         log_lines.append(f"{k:10s}: {v:.4f}")
     log_lines.append("")
-    log_lines.append("Signing Latency (ms) [RSA-2048 + PSS, SHA-256]")
+    log_lines.append("Signing Latency (ms) [RSA-2048 + PKCS#1 v1.5, SHA-256]")
     log_lines.append("-" * 60)
     for k, v in sign_stats.items():
         log_lines.append(f"{k:10s}: {v:.4f}")

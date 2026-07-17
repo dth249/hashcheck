@@ -1,7 +1,7 @@
 ========================================================================
 IntelliHash Extended Benchmark — 2 Methods × 3 Size Groups
 ========================================================================
-Timestamp : 2026-07-14 16:42:02
+Timestamp : 2026-07-17 22:15:45
 
 Machine Info
 ------------------------------------------------------------------------
@@ -15,57 +15,57 @@ Machine Info
 
 Dataset breakdown
 ------------------------------------------------------------------------
-  small   : 30,000 orders
-  medium  : 40,000 orders
-  large   : 30,000 orders
+  small   : 4,000 orders
+  medium  : 8,000 orders
+  large   : 8,000 orders
 
-Size group: small  (30,000 orders)
+Size group: small  (4,000 orders)
 ------------------------------------------------------------
   method: direct
     avg_payload = 155 bytes
-    canon  avg=0.0170ms  std=0.1900ms
-    sign   avg=0.7168ms  std=0.3715ms
-    verify avg=0.0626ms  std=0.0799ms
-    throughput (sign): 1395 orders/sec
+    canon  avg=0.0243ms  std=0.1810ms
+    sign   avg=0.9295ms  std=3.0839ms
+    verify avg=0.0556ms  std=0.1377ms
+    throughput (sign): 1076 orders/sec
 
   method: jcs
     avg_payload = 155 bytes
-    canon  avg=0.0435ms  std=0.8541ms
-    sign   avg=0.6968ms  std=0.2944ms
-    verify avg=0.0608ms  std=0.0914ms
-    throughput (sign): 1435 orders/sec
+    canon  avg=0.0681ms  std=0.7388ms
+    sign   avg=0.8961ms  std=3.3666ms
+    verify avg=0.0674ms  std=0.4731ms
+    throughput (sign): 1116 orders/sec
 
 
-Size group: medium  (40,000 orders)
+Size group: medium  (8,000 orders)
 ------------------------------------------------------------
   method: direct
     avg_payload = 260 bytes
-    canon  avg=0.0199ms  std=0.0351ms
-    sign   avg=0.7305ms  std=0.7127ms
-    verify avg=0.0660ms  std=0.2401ms
-    throughput (sign): 1369 orders/sec
+    canon  avg=0.0249ms  std=0.1300ms
+    sign   avg=0.7858ms  std=1.0026ms
+    verify avg=0.0550ms  std=0.1510ms
+    throughput (sign): 1273 orders/sec
 
   method: jcs
     avg_payload = 260 bytes
-    canon  avg=0.0588ms  std=0.2327ms
-    sign   avg=0.7430ms  std=0.5488ms
-    verify avg=0.0680ms  std=0.2511ms
-    throughput (sign): 1346 orders/sec
+    canon  avg=0.0875ms  std=0.7024ms
+    sign   avg=0.8252ms  std=1.7301ms
+    verify avg=0.0636ms  std=0.3029ms
+    throughput (sign): 1212 orders/sec
 
 
-Size group: large  (30,000 orders)
+Size group: large  (8,000 orders)
 ------------------------------------------------------------
   method: direct
-    avg_payload = 879 bytes
-    canon  avg=0.0379ms  std=0.0548ms
-    sign   avg=0.7253ms  std=1.0788ms
-    verify avg=0.0664ms  std=0.1988ms
-    throughput (sign): 1379 orders/sec
+    avg_payload = 880 bytes
+    canon  avg=0.0534ms  std=0.1839ms
+    sign   avg=0.9411ms  std=1.3934ms
+    verify avg=0.0696ms  std=0.2021ms
+    throughput (sign): 1063 orders/sec
 
   method: jcs
-    avg_payload = 879 bytes
-    canon  avg=0.1535ms  std=0.3011ms
-    sign   avg=0.7326ms  std=0.6635ms
-    verify avg=0.0688ms  std=0.2676ms
-    throughput (sign): 1365 orders/sec
+    avg_payload = 880 bytes
+    canon  avg=0.3580ms  std=1.9148ms
+    sign   avg=1.1559ms  std=2.6133ms
+    verify avg=0.0873ms  std=0.2789ms
+    throughput (sign): 865 orders/sec
 

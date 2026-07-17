@@ -87,47 +87,38 @@ def load_public_key():
 
 def sign_data(private_key, data: bytes) -> bytes:
     """
-    Ký số dữ liệu bằng RSA-PSS + SHA-256.
+    Ký số dữ liệu bằng RSA PKCS#1 v1.5 + SHA-256.
     Thư viện tự hash `data` bên trong — dùng khi không cần lưu digest riêng.
     """
     return private_key.sign(
         data,
-        padding.PSS(
-            mgf=padding.MGF1(hashes.SHA256()),
-            salt_length=padding.PSS.MAX_LENGTH,
-        ),
+        padding.PKCS1v15(),
         hashes.SHA256(),
     )
 
 
 def sign_digest(private_key, digest: bytes) -> bytes:
     """
-    Ký RSA-PSS trên digest SHA-256 đã tính sẵn (32 bytes).
+    Ký RSA PKCS#1 v1.5 trên digest SHA-256 đã tính sẵn (32 bytes).
     Dùng Prehashed để thư viện KHÔNG hash lại — tránh tính SHA-256 hai lần.
     Khớp chính xác công thức paper: sigma = Sign_sk(h).
     """
     return private_key.sign(
         digest,
-        padding.PSS(
-            mgf=padding.MGF1(hashes.SHA256()),
-            salt_length=padding.PSS.MAX_LENGTH,
-        ),
+        padding.PKCS1v15(),
         asym_utils.Prehashed(hashes.SHA256()),
     )
 
 
 def verify_signature(public_key, data: bytes, signature: bytes) -> bool:
     """
-    Xác minh chữ ký — thư viện tự hash `data` bên trong.
+    Xác minh chữ ký bằng RSA PKCS#1 v1.5 + SHA-256 — thư viện tự hash `data` bên trong.
     """
     try:
         public_key.verify(
             signature,
             data,
-            padding.PSS(
-                mgf=padding.MGF1(hashes.SHA256()),
-                salt_length=padding.PSS.MAX_LENGTH,
-            ),
+            padding.PKCS1v15(),
             hashes.SHA256(),
         )
         return True
@@ -137,17 +128,14 @@ def verify_signature(public_key, data: bytes, signature: bytes) -> bool:
 
 def verify_digest(public_key, digest: bytes, signature: bytes) -> bool:
     """
-    Xác minh chữ ký trên digest SHA-256 đã tính sẵn.
+    Xác minh chữ ký bằng RSA PKCS#1 v1.5 trên digest SHA-256 đã tính sẵn.
     Dùng Prehashed — khớp với sign_digest(), không hash lại.
     """
     try:
         public_key.verify(
             signature,
             digest,
-            padding.PSS(
-                mgf=padding.MGF1(hashes.SHA256()),
-                salt_length=padding.PSS.MAX_LENGTH,
-            ),
+            padding.PKCS1v15(),
             asym_utils.Prehashed(hashes.SHA256()),
         )
         return True
